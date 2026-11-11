@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Oral-B iO9 Duo Edition i Black Weeks: 1 400 kr per person</title>
+<meta name="description" content="Oral-B iO9 Duo Edition i Black Weeks: 2 799 kr etter 200 kr cashback, 1 400 kr per person. Regnestykke, esken innhold og dommen.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #1a1a1a;
+  --muted: #5f584c;
+  --accent: #c41e3a;
+  --green: #2d7d46;
+  --amber: #d97706;
+  --paper: #f4f0e6;
+  --hairline: rgba(26, 26, 26, 0.22);
+  --mono: 'IBM Plex Mono', ui-monospace, 'Courier New', monospace;
+  --serif: 'Fraunces', Georgia, 'Times New Roman', serif;
+  --sans: 'Archivo', system-ui, -apple-system, sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body {
+  margin: 0;
+  font-family: var(--sans);
+  font-size: 17px;
+  line-height: 1.65;
+  color: var(--ink);
+  background: var(--paper) url('assets/paper.png') repeat;
+  background-size: 512px 512px;
+  overflow-x: clip;
+}
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; }
+.wrap { max-width: 1060px; margin: 0 auto; padding: 0 22px; }
+
+/* Progress bar */
+#progress {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  z-index: 60;
+}
+
+/* Masthead */
+.masthead { border-bottom: 1px solid var(--hairline); }
+.masthead .wrap {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+/* Hero */
+.hero { padding: 56px 0 80px; text-align: center; }
+.hero-num {
+  margin: 0 0 12px;
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.3em;
+  color: var(--muted);
+}
+.kicker {
+  display: inline-block;
+  margin: 0 0 18px;
+  padding: 7px 14px;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+.hero h1 {
+  margin: 0 0 14px;
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: clamp(2.5rem, 7vw, 5rem);
+  line-height: 1.02;
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+}
+.hero-price {
+  margin: 0 0 30px;
+  font-family: var(--mono);
+  font-size: clamp(1.02rem, 2.4vw, 1.3rem);
+  font-weight: 500;
+}
+.hero-product-wrap {
+  position: relative;
+  max-width: 540px;
+  margin: 0 auto 6px;
+}
+.hero-product { width: 100%; }
+.stamp {
+  position: absolute;
+  top: -14px;
+  right: -4px;
+  width: 132px;
+  height: 132px;
+  display: grid;
+  place-content: center;
+  gap: 4px;
+  text-align: center;
+  border: 2.5px solid var(--accent);
+  outline: 1.5px solid var(--accent);
+  outline-offset: 5px;
+  border-radius: 50%;
+  color: var(--accent);
+  background: rgba(244, 240, 230, 0.88);
+  transform: rotate(-11deg);
+}
+.stamp-score {
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: 34px;
+  line-height: 1;
+}
+.stamp-label {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.18em;
+}
+.per-person {
+  margin: 14px 0 6px;
+  font-family: var(--mono);
+  font-size: 1rem;
+  font-weight: 600;
+}
+.hero-footnote {
+  max-width: 470px;
+  margin: 0 auto 28px;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+.toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin: 0 0 30px;
+}
+.toggle-label {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.seg { display: inline-flex; border: 1px solid var(--ink); }
+.seg-btn {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  padding: 9px 22px;
+  font-family: var(--mono);
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  color: var(--ink);
+  cursor: pointer;
+}
+.seg-btn + .seg-btn { border-left: 1px solid var(--ink); }
+.seg-btn[aria-pressed='true'] { background: var(--ink); color: var(--paper); }
+.seg-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* Buttons */
+.cta-row { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+.btn {
+  display: inline-block;
+  padding: 15px 30px;
+  background: var(--ink);
+  color: #f7f3e9;
+  font-family: var(--mono);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 1px solid var(--ink);
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+}
+.btn:hover { background: var(--accent); border-color: var(--accent); color: #fff; }
+.btn-ghost { background: transparent; color: var(--ink); }
+.btn-ghost:hover { background: var(--ink); border-color: var(--ink); color: #f7f3e9; }
+.btn-light { background: #f2f7f1; border-color: #f2f7f1; color: #14351f; }
+.btn-light:hover { background: #fff; border-color: #fff; color: #14351f; }
+
+/* Sections */
+.sec { padding: 68px 0; border-top: 1px solid var(--hairline); }
+.sec-head { display: flex; align-items: baseline; gap: 16px; margin-bottom: 34px; }
+.sec-num {
+  font-family: var(--mono);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+}
+.sec-head h2 {
+  margin: 0;
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: clamp(1.9rem, 4.2vw, 2.9rem);
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+.lede { max-width: 640px; margin: 0 0 28px; font-size: 1.06rem; color: var(--muted); }
+
+/* Receipt */
+.receipt {
+  max-width: 520px;
+  margin: 8px auto 0;
+  padding: 26px 24px 22px;
+  background: #fbf8f0;
+  border: 1px solid #d8d0bd;
+  box-shadow: 5px 6px 0 rgba(26, 26, 26, 0.09);
+  font-family: var(--mono);
+}
+@media (min-width: 720px) { .receipt { transform: rotate(-0.7deg); } }
+.receipt-title {
+  margin: 0 0 16px;
+  text-align: center;
+  font-size: 11px;
+  letter-spacing: 0.24em;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+.r-row {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  padding: 8px 0;
+  font-size: 15px;
+}
+.r-label { white-space: nowrap; }
+.r-dots { flex: 1; min-width: 12px; border-bottom: 1px dotted rgba(26, 26, 26, 0.45); transform: translateY(-4px); }
+.r-value { font-weight: 500; white-space: nowrap; }
+.r-save { color: var(--green); }
+.r-total {
+  margin-top: 10px;
+  padding-top: 14px;
+  border-top: 2px solid var(--ink);
+  font-size: 17px;
+  font-weight: 700;
+}
+.r-total .r-value { color: var(--accent); }
+.receipt-foot {
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px dashed rgba(26, 26, 26, 0.4);
+  text-align: center;
+}
+.bw-chip {
+  display: inline-block;
+  border: 1px solid var(--amber);
+  color: #8a4b06;
+  padding: 5px 10px;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.receipt-per-person { margin: 12px 0 0; font-size: 15px; font-weight: 600; }
+@media (max-width: 400px) {
+  .receipt { padding: 20px 14px; }
+  .r-row { font-size: 13.5px; }
+}
+
+/* Esken */
+.box-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+  gap: 20px 56px;
+  align-items: center;
+}
+@media (max-width: 719px) { .box-grid { grid-template-columns: 1fr; } }
+.box-fig { margin: 0; }
+.box-product { width: 100%; max-width: 430px; margin: 0 auto; }
+.checklist { list-style: none; margin: 18px 0 0; padding: 0; }
+.checklist li {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  padding: 9px 0;
+  border-bottom: 1px solid var(--hairline);
+  font-size: 1.02rem;
+}
+.checklist li::before {
+  content: '';
+  flex: none;
+  width: 9px;
+  height: 9px;
+  background: var(--accent);
+  transform: translateY(-1px);
+}
+.warning {
+  margin: 26px 0 16px;
+  padding: 16px 20px;
+  background: var(--amber);
+  color: #1a1a1a;
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: 1.3rem;
+  line-height: 1.3;
+}
+.note { font-size: 0.85rem; color: var(--muted); margin: 6px 0 0; }
+
+/* Prisstigen */
+.tier { padding: 20px 0 22px; border-bottom: 1px solid var(--hairline); }
+.tier-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px 12px;
+  margin-bottom: 12px;
+}
+.tier-name { font-family: var(--serif); font-weight: 700; font-size: 1.45rem; }
+.chip {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border: 1px solid var(--hairline);
+  padding: 4px 8px;
+  color: var(--muted);
+}
+.tier-price { margin-left: auto; font-family: var(--mono); font-weight: 600; font-size: 1.08rem; }
+.bar { height: 12px; background: rgba(26, 26, 26, 0.08); }
+.bar-fill { display: block; height: 100%; background: var(--ink); transform-origin: 0 50%; }
+.tier-current .bar-fill { background: var(--accent); }
+.tier-current .tier-name { color: var(--accent); }
+.bar-caption {
+  margin: 16px 0 0;
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+/* Tannkjoettet */
+.gum-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 14px;
+  margin-bottom: 30px;
+}
+.gum-card {
+  border: 1px solid var(--hairline);
+  background: rgba(251, 248, 241, 0.55);
+  padding: 18px 16px;
+}
+.gum-card h3 { margin: 0 0 6px; font-family: var(--serif); font-size: 1.2rem; font-weight: 700; }
+.gum-card p { margin: 0; font-size: 0.88rem; color: var(--muted); }
+.quote {
+  margin: 0;
+  padding: 4px 0 4px 18px;
+  border-left: 3px solid var(--ink);
+  font-size: 0.9rem;
+  color: var(--muted);
+  max-width: 660px;
+}
+
+/* Cashbacken */
+.cash-band { background: var(--green); color: #f2f7f1; }
+.cash-band .sec-num { color: rgba(242, 247, 241, 0.75); }
+.cash-band .sec-head h2 { color: #f2f7f1; }
+.cash-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+  gap: 20px 40px;
+  align-items: center;
+}
+@media (max-width: 719px) { .cash-grid { grid-template-columns: 1fr; } }
+.cash-amount {
+  margin: 0;
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: clamp(2.6rem, 6vw, 4rem);
+  line-height: 1;
+}
+.cash-sub { margin: 12px 0 0; font-size: 0.98rem; opacity: 0.92; max-width: 400px; }
+.cb-list { list-style: none; margin: 0 0 26px; padding: 0; }
+.cb-list li {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(242, 247, 241, 0.25);
+  font-size: 0.98rem;
+}
+.check {
+  flex: none;
+  width: 21px;
+  height: 21px;
+  border-radius: 50%;
+  background: #f2f7f1;
+  color: var(--green);
+  display: grid;
+  place-items: center;
+  font-size: 13px;
+  font-weight: 700;
+  transform: translateY(4px);
+}
+.cb-list strong { font-weight: 600; }
+
+/* Dommen */
+.verdict { text-align: center; }
+.stamp-xl {
+  position: static;
+  width: 168px;
+  height: 168px;
+  margin: 0 auto 28px;
+  transform: rotate(8deg);
+}
+.stamp-xl .stamp-score { font-size: 54px; }
+.stamp-xl .stamp-label { font-size: 11px; letter-spacing: 0.2em; }
+.verdict-h2 {
+  margin: 0;
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  line-height: 1.08;
+  text-wrap: balance;
+}
+.verdict-lists {
+  max-width: 780px;
+  margin: 44px auto 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  text-align: left;
+}
+@media (max-width: 639px) { .verdict-lists { grid-template-columns: 1fr; } }
+.v-list h3 {
+  margin: 0 0 8px;
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+#verdict-two h3 { color: var(--accent); }
+#verdict-one h3 { color: var(--green); }
+.v-list ul { list-style: none; margin: 0; padding: 0; }
+.v-list li {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--hairline);
+}
+.v-list li::before {
+  content: '+';
+  font-family: var(--mono);
+  font-weight: 600;
+  color: var(--accent);
+}
+#verdict-one li::before { color: var(--green); }
+.cta-final { margin-top: 44px; }
+
+/* Footer */
+.site-footer {
+  border-top: 2px solid var(--ink);
+  padding: 40px 0 70px;
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+.foot-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr);
+  gap: 28px;
+}
+@media (max-width: 639px) { .foot-grid { grid-template-columns: 1fr; } }
+.foot-meta {
+  margin: 0 0 6px;
+  font-family: var(--mono);
+  font-size: 0.78rem;
+}
+.credit { margin: 14px 0 0; }
+.sources-heading {
+  margin: 0 0 8px;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+.sources { list-style: none; margin: 0; padding: 0; }
+.sources li { padding: 3px 0; }
+.sources a { color: var(--muted); text-decoration: underline; text-underline-offset: 2px; }
+.sources a:hover { color: var(--accent); }
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+</style>
+</head>
+<body>
+<div id="progress" aria-hidden="true"></div>
+
+<header class="masthead">
+  <div class="wrap">
+    <span>Produkttest</span>
+    <span>Elektrisk tannbørste</span>
+  </div>
+</header>
+
+<main>
+
+<section class="hero" id="hero">
+  <div class="wrap">
+    <p class="hero-num">01</p>
+    <p class="kicker">Black Weeks</p>
+    <h1>Oral-B iO9 Duo Edition</h1>
+    <p class="hero-price"><span id="hero-note">2 799 kr etter 200 kr cashback</span></p>
+    <div class="hero-product-wrap">
+      <img class="hero-product" src="assets/product.webp" srcset="assets/product.webp 666w, assets/product-700.webp 1200w" sizes="(min-width: 720px) 540px, 92vw" width="1031" height="1032" alt="Oral-B iO9 Duo Edition med to håndtak, ladestasjon og reiseetui" decoding="async">
+      <div class="stamp" id="hero-stamp">
+        <span class="stamp-score" id="hero-stamp-score">9/10</span>
+        <span class="stamp-label" id="hero-stamp-label">TO PERSONER</span>
+      </div>
+    </div>
+    <p class="per-person js-per-person hero-after" id="per-person-line">1 400 kr per person</p>
+    <p class="hero-footnote hero-after" id="hero-footnote">9/10 fordi prisen per person er lav. Ikke 10 fordi du bare får én lader.</p>
+    <div class="toggle hero-after" role="group" aria-label="Vis pris for en eller to personer">
+      <span class="toggle-label">Vis pris for</span>
+      <div class="seg">
+        <button type="button" class="seg-btn" id="btn-two" data-person="to" aria-pressed="true">To</button>
+        <button type="button" class="seg-btn" id="btn-one" data-person="en" aria-pressed="false">Én</button>
+      </div>
+    </div>
+    <div class="cta-row hero-after">
+      <a class="btn" href="https://www.power.no/skjoennhet-og-velvaere/tannpleie/elektrisk-tannboerste/oral-b-io9-duo-edition-elektrisk-tannboerste-black-onyx-e-rose-quartz/p-4231876/" target="_blank" rel="noopener noreferrer">Se hos Power</a>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="regnestykket">
+  <div class="wrap">
+    <header class="sec-head reveal">
+      <span class="sec-num">02</span>
+      <h2>Regnestykket</h2>
+    </header>
+    <div class="reveal">
+      <p class="lede">Veien fra 5 399 kr til det du faktisk betaler, rad for rad.</p>
+      <div class="receipt">
+        <p class="receipt-title">Oral-B iO9 Duo Edition</p>
+        <div class="stagger">
+          <div class="r-row"><span class="r-label">Førpris</span><span class="r-dots"></span><span class="r-value">5 399 kr</span></div>
+          <div class="r-row"><span class="r-label">Rabatt</span><span class="r-dots"></span><span class="r-value r-save">-2 400 kr</span></div>
+          <div class="r-row"><span class="r-label">Du betaler</span><span class="r-dots"></span><span class="r-value">2 999 kr</span></div>
+          <div class="r-row"><span class="r-label">Cashback</span><span class="r-dots"></span><span class="r-value r-save">-200 kr</span></div>
+          <div class="r-row r-total"><span class="r-label">Netto etter cashback</span><span class="r-dots"></span><span class="r-value">2 799 kr</span></div>
+        </div>
+        <div class="receipt-foot">
+          <span class="bw-chip">Black Weeks til 30. november 2026</span>
+          <p class="receipt-per-person js-per-person">1 400 kr per person</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="esken">
+  <div class="wrap">
+    <header class="sec-head reveal">
+      <span class="sec-num">03</span>
+      <h2>Esken</h2>
+    </header>
+    <div class="box-grid">
+      <figure class="box-fig reveal">
+        <img class="box-product" src="assets/product.webp" srcset="assets/product.webp 666w, assets/product-700.webp 1200w" sizes="(min-width: 720px) 430px, 92vw" width="1031" height="1032" alt="Packshot av Oral-B iO9 Duo Edition med håndtak, lader og tilbehør" loading="lazy" decoding="async">
+      </figure>
+      <div class="reveal">
+        <p class="lede">Duo betyr to håndtak. Resten av esken deler dere om.</p>
+        <ul class="checklist stagger">
+          <li><strong>To håndtak</strong></li>
+          <li>Børstehoder</li>
+          <li>Reiseetui</li>
+          <li><strong>Én lader</strong></li>
+          <li>Holder</li>
+          <li>USB-adapter</li>
+        </ul>
+        <p class="warning">Pakken inneholder bare én lader.</p>
+        <p class="note">Børstehoder: packshoten viser flere enn to, men antallet står ikke i produktteksten. Vi lover ikke et eksakt tall.</p>
+        <p class="note">USB-adapter: synlig i packshoten, men ikke eksplisitt bekreftet i produktteksten.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="prisstigen">
+  <div class="wrap">
+    <header class="sec-head reveal">
+      <span class="sec-num">04</span>
+      <h2>Prisstigen</h2>
+    </header>
+    <div class="reveal">
+      <p class="lede">Tre duopakker i iO-familien, tre priser. Slik stiger kostnaden fra iO3 til iO9.</p>
+      <div class="tier">
+        <div class="tier-head">
+          <span class="tier-name">iO3 Duo</span>
+          <span class="chip">Trykksensor</span>
+          <span class="chip">3 moduser</span>
+          <span class="tier-price">999 kr</span>
+        </div>
+        <div class="bar"><span class="bar-fill" style="width:35.7%"></span></div>
+      </div>
+      <div class="tier">
+        <div class="tier-head">
+          <span class="tier-name">iO5 Duo</span>
+          <span class="chip">Trykksensor</span>
+          <span class="chip">5 moduser</span>
+          <span class="tier-price">1 499 kr</span>
+        </div>
+        <div class="bar"><span class="bar-fill" style="width:53.5%"></span></div>
+      </div>
+      <div class="tier tier-current">
+        <div class="tier-head">
+          <span class="tier-name">iO9 Duo</span>
+          <span class="chip">Trykksensor</span>
+          <span class="chip">7 moduser</span>
+          <span class="tier-price">2 799 kr etter cashback</span>
+        </div>
+        <div class="bar"><span class="bar-fill" style="width:100%"></span></div>
+      </div>
+      <p class="bar-caption">Stolpen viser prisen i forhold til iO9.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="tannkjoettet">
+  <div class="wrap">
+    <header class="sec-head reveal">
+      <span class="sec-num">05</span>
+      <h2>Tannkjøttet</h2>
+    </header>
+    <div class="reveal">
+      <p class="lede">Den dyreste børsten redder ikke tannkjøttet hvis teknikken er feil. Fire punkter som betyr mer enn prisen.</p>
+      <div class="gum-grid stagger">
+        <div class="gum-card">
+          <h3>To minutter</h3>
+          <p>La timeren bestemme. To minutter er hele jobben, hver gang.</p>
+        </div>
+        <div class="gum-card">
+          <h3>Ikke press</h3>
+          <p>Trykksensoren gir beskjed når du presser for hardt. Lytt til den.</p>
+        </div>
+        <div class="gum-card">
+          <h3>Myk børste</h3>
+          <p>Mykt børstehode er nok for de fleste. Hardt gnager på slimhinnen.</p>
+        </div>
+        <div class="gum-card">
+          <h3>Tannkrem uten SLS</h3>
+          <p>SLS kan irritere munnslimhinnen. Uten er et trygt valg.</p>
+        </div>
+      </div>
+      <blockquote class="quote">Cochrane Oral Health Group (2014): 11 % mindre plakk etter 1-3 måneder, 21 % mindre etter 3 måneder. Studien sammenligner elektriske og manuelle børster generelt, ikke spesifikt iO3 med iO9.</blockquote>
+    </div>
+  </div>
+</section>
+
+<section class="sec cash-band" id="cashbacken">
+  <div class="wrap">
+    <header class="sec-head reveal">
+      <span class="sec-num">06</span>
+      <h2>Cashbacken</h2>
+    </header>
+    <div class="cash-grid">
+      <div class="reveal">
+        <p class="cash-amount">200 kr</p>
+        <p class="cash-sub">Oral-B gir 200 kr tilbake på iO9 Duo. Du melder fra selv, og pengene kommer etter at registreringen er godkjent.</p>
+      </div>
+      <div class="reveal">
+        <ul class="cb-list stagger">
+          <li><span class="check">&#10003;</span><span><strong>Kjøp:</strong> 1. juli 2026 til 31. august 2027</span></li>
+          <li><span class="check">&#10003;</span><span><strong>Registrering:</strong> innen 29. oktober 2027</span></li>
+          <li><span class="check">&#10003;</span><span><strong>Krav:</strong> Kvittering og strekkode</span></li>
+        </ul>
+        <a class="btn btn-light" href="https://oral-b-cashback.com/no/" target="_blank" rel="noopener noreferrer">oral-b-cashback.com</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="dommen">
+  <div class="wrap">
+    <header class="sec-head reveal">
+      <span class="sec-num">07</span>
+      <h2>Dommen</h2>
+    </header>
+    <div class="verdict">
+      <div class="stamp stamp-xl" id="verdict-stamp">
+        <span class="stamp-score" id="verdict-stamp-text">JA</span>
+        <span class="stamp-label" id="verdict-stamp-sub">FOR TO</span>
+      </div>
+      <div class="reveal">
+        <h2 class="verdict-h2" id="verdict-h2">Ja, hvis dere er to.</h2>
+        <div class="verdict-lists">
+          <div class="v-list" id="verdict-two">
+            <h3>Kjøp iO9 Duo hvis</h3>
+            <ul>
+              <li>Dere er to som bruker børstene hver dag</li>
+              <li>Dere kan dele den ene laderen</li>
+              <li>Du vil ha den mest avanserte sensoren</li>
+            </ul>
+          </div>
+          <div class="v-list" id="verdict-one" hidden>
+            <h3>Kjøp iO3 Duo hvis</h3>
+            <ul>
+              <li>Du er bare én</li>
+              <li>Du trenger bare det grunnleggende</li>
+              <li>Du vil heller spare pengene</li>
+            </ul>
+          </div>
+        </div>
+        <div class="cta-row cta-final">
+          <a class="btn" href="https://www.power.no/skjoennhet-og-velvaere/tannpleie/elektrisk-tannboerste/oral-b-io9-duo-edition-elektrisk-tannboerste-black-onyx-e-rose-quartz/p-4231876/" target="_blank" rel="noopener noreferrer">Se hos Power</a>
+          <a class="btn btn-ghost" href="https://www.prisjakt.no/s/oralb-io-9/" target="_blank" rel="noopener noreferrer">Sjekk Prisjakt</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap foot-grid">
+    <div>
+      <p class="foot-meta">Sist sjekket 11. november 2026</p>
+      <p class="foot-meta">Priser og vilkår kan endre seg etter at siden er sjekket.</p>
+      <p class="credit">Produktbilder brukt som illustrasjon i denne testen.</p>
+    </div>
+    <div>
+      <p class="sources-heading">Kilder</p>
+      <ul class="sources">
+        <li><a href="https://www.power.no/skjoennhet-og-velvaere/tannpleie/elektrisk-tannboerste/oral-b-io9-duo-edition-elektrisk-tannboerste-black-onyx-e-rose-quartz/p-4231876/" target="_blank" rel="noopener noreferrer">Power: Oral-B iO9 Duo Edition</a></li>
+        <li><a href="https://www.power.no/skjoennhet-og-velvaere/tannpleie/elektrisk-tannboerste/oral-b-io5-duo-edition-elektrisk-tannboerste-matt-svart-e-quite-white/p-4231868/" target="_blank" rel="noopener noreferrer">Power: Oral-B iO5 Duo Edition</a></li>
+        <li><a href="https://www.clasohlson.com/no/Oral-B-iO-3-Duo-elektrisk-tannborste,-2-pakninge/p/44-9953" target="_blank" rel="noopener noreferrer">Clas Ohlson: Oral-B iO3 Duo</a></li>
+        <li><a href="https://oral-b-cashback.com/no/" target="_blank" rel="noopener noreferrer">Oral-B cashback</a></li>
+        <li><a href="https://www.prisjakt.no/s/oralb-io-9/" target="_blank" rel="noopener noreferrer">Prisjakt: Oral-B iO9</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script>
+(function () {
+  'use strict';
+
+  var TWO = 2;
+  var ONE = 1;
+
+  var TEXTS = {
+    'hero-stamp-score': ['9/10', '6/10'],
+    'hero-stamp-label': ['TO PERSONER', 'ÉN PERSON'],
+    'hero-note': ['2 799 kr etter 200 kr cashback', '2 799 kr etter cashback. Den andre børsten blir liggende.'],
+    'hero-footnote': ['9/10 fordi prisen per person er lav. Ikke 10 fordi du bare får én lader.', '6/10 fordi du betaler for en børste du ikke bruker.'],
+    'verdict-h2': ['Ja, hvis dere er to.', 'Nei, hvis du er én.'],
+    'verdict-stamp-text': ['JA', 'NEI'],
+    'verdict-stamp-sub': ['FOR TO', 'FOR ÉN']
+  };
+  var PER_PERSON = ['1 400 kr per person', '2 799 kr for hele pakken'];
+
+  var btnTwo = document.getElementById('btn-two');
+  var btnOne = document.getElementById('btn-one');
+
+  function setPerson(count) {
+    var i = count === ONE ? 1 : 0;
+    Object.keys(TEXTS).forEach(function (id) {
+      var el = document.getElementById(id);
+      if (el) el.textContent = TEXTS[id][i];
+    });
+    var per = document.querySelectorAll('.js-per-person');
+    for (var k = 0; k < per.length; k++) per[k].textContent = PER_PERSON[i];
+    var two = document.getElementById('verdict-two');
+    var one = document.getElementById('verdict-one');
+    if (two) two.hidden = count !== TWO;
+    if (one) one.hidden = count === TWO;
+    btnTwo.setAttribute('aria-pressed', count === TWO ? 'true' : 'false');
+    btnOne.setAttribute('aria-pressed', count === ONE ? 'true' : 'false');
+    if (window.ScrollTrigger) window.ScrollTrigger.refresh();
+  }
+
+  btnTwo.addEventListener('click', function () { setPerson(TWO); });
+  btnOne.addEventListener('click', function () { setPerson(ONE); });
+
+  if (!window.gsap || !window.ScrollTrigger) return;
+  gsap.registerPlugin(ScrollTrigger);
+
+  var mm = gsap.matchMedia();
+
+  mm.add('(prefers-reduced-motion: no-preference)', function () {
+    gsap.to('#progress', {
+      scaleX: 1,
+      ease: 'none',
+      scrollTrigger: { start: 0, end: 'max', scrub: 0.4 }
+    });
+
+    gsap.timeline({ defaults: { ease: 'power3.out', duration: 0.7 } })
+      .from('.hero-num', { y: 14, opacity: 0 })
+      .from('.kicker', { y: 14, opacity: 0 }, '-=0.5')
+      .from('.hero h1', { y: 26, opacity: 0 }, '-=0.5')
+      .from('.hero-price', { y: 16, opacity: 0 }, '-=0.52')
+      .from('.hero-product', { y: 42, opacity: 0, scale: 0.97 }, '-=0.5')
+      .from('#hero-stamp', { scale: 0.4, opacity: 0, rotation: 10, ease: 'back.out(1.8)', duration: 0.6 }, '-=0.4')
+      .from('.hero-after', { y: 16, opacity: 0, stagger: 0.09, duration: 0.55 }, '-=0.45');
+
+    gsap.utils.toArray('.reveal').forEach(function (el) {
+      gsap.from(el, {
+        y: 28,
+        opacity: 0,
+        duration: 0.75,
+        ease: 'power2.out',
+        scrollTrigger: { trigger: el, start: 'top 86%' }
+      });
+    });
+
+    gsap.utils.toArray('.stagger').forEach(function (group) {
+      gsap.from(group.children, {
+        y: 14,
+        opacity: 0,
+        duration: 0.5,
+        ease: 'power2.out',
+        stagger: 0.08,
+        scrollTrigger: { trigger: group, start: 'top 88%' }
+      });
+    });
+
+    gsap.utils.toArray('.bar-fill').forEach(function (bar) {
+      gsap.from(bar, {
+        scaleX: 0,
+        duration: 1.1,
+        ease: 'power2.out',
+        scrollTrigger: { trigger: bar, start: 'top 92%' }
+      });
+    });
+
+    gsap.from('#verdict-stamp', {
+      scale: 0.5,
+      opacity: 0,
+      rotation: 10,
+      duration: 0.7,
+      ease: 'back.out(1.6)',
+      scrollTrigger: { trigger: '#verdict-stamp', start: 'top 85%' }
+    });
+  });
+
+  mm.add('(min-width: 900px) and (prefers-reduced-motion: no-preference)', function () {
+    gsap.to('.hero-product', {
+      yPercent: -10,
+      ease: 'none',
+      scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true }
+    });
+  });
+
+  window.addEventListener('load', function () { ScrollTrigger.refresh(); });
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(function () { ScrollTrigger.refresh(); });
+  }
+})();
+</script>
+</body>
+</html>
