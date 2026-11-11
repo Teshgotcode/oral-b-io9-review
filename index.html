@@ -138,7 +138,181 @@ a { color: inherit; }
   font-size: 1rem;
   font-weight: 600;
 }
-.hero-footnote {
+.chat-fab {
+  position: fixed;
+  bottom: 22px;
+  right: 22px;
+  z-index: 999;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.22);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.chat-fab:hover { transform: scale(1.06); box-shadow: 0 6px 18px rgba(0,0,0,0.28); }
+.chat-fab svg { width: 24px; height: 24px; }
+.chat-window {
+  position: fixed;
+  bottom: 86px;
+  right: 22px;
+  z-index: 998;
+  width: 360px;
+  max-width: calc(100vw - 44px);
+  max-height: 520px;
+  background: var(--paper);
+  border: 1px solid var(--hairline);
+  border-radius: 14px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.18);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(12px) scale(0.97);
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+.chat-window.open { opacity: 1; transform: translateY(0) scale(1); pointer-events: auto; }
+.chat-header {
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--hairline);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--paper);
+}
+.chat-header h4 {
+  font-family: var(--font);
+  font-weight: 700;
+  font-size: 15px;
+  margin: 0;
+  color: var(--ink);
+}
+.chat-header .chat-close {
+  background: none; border: none; cursor: pointer; padding: 2px; color: var(--muted);
+}
+.chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.chat-msg {
+  max-width: 86%;
+  padding: 10px 13px;
+  border-radius: 12px;
+  font-size: 14px;
+  line-height: 1.55;
+  word-break: break-word;
+}
+.chat-msg.bot {
+  align-self: flex-start;
+  background: #fff;
+  border: 1px solid var(--hairline);
+  color: var(--ink);
+  border-bottom-left-radius: 3px;
+}
+.chat-msg.user {
+  align-self: flex-end;
+  background: var(--accent);
+  color: #fff;
+  border-bottom-right-radius: 3px;
+}
+.chat-msg.bot a { color: var(--accent); text-decoration: underline; }
+.chat-typing {
+  align-self: flex-start;
+  display: none;
+  gap: 4px;
+  padding: 10px 13px;
+  background: #fff;
+  border: 1px solid var(--hairline);
+  border-radius: 12px;
+  border-bottom-left-radius: 3px;
+}
+.chat-typing.active { display: flex; }
+.chat-typing span {
+  width: 7px; height: 7px;
+  background: var(--muted);
+  border-radius: 50%;
+  animation: chatBounce 1s infinite ease-in-out;
+}
+.chat-typing span:nth-child(2) { animation-delay: 0.15s; }
+.chat-typing span:nth-child(3) { animation-delay: 0.3s; }
+@keyframes chatBounce {
+  0%, 80%, 100% { transform: scale(0.6); opacity: 0.5; }
+  40% { transform: scale(1); opacity: 1; }
+}
+.chat-input-area {
+  padding: 10px 14px 14px;
+  border-top: 1px solid var(--hairline);
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.chat-input-area input {
+  flex: 1;
+  border: 1px solid var(--hairline);
+  border-radius: 22px;
+  padding: 8px 14px;
+  font-family: var(--sans);
+  font-size: 14px;
+  outline: none;
+  background: #fff;
+}
+.chat-input-area input:focus { border-color: var(--accent); }
+.chat-input-area button {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  border: none;
+  background: var(--accent);
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.chat-input-area button svg { width: 16px; height: 16px; }
+.chat-disclaimer {
+  font-size: 11px;
+  color: var(--muted);
+  text-align: center;
+  padding: 0 14px 8px;
+  font-family: var(--sans);
+}
+.chat-suggestions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 0 14px 10px;
+}
+.chat-suggestions button {
+  font-size: 12px;
+  padding: 5px 10px;
+  border-radius: 14px;
+  border: 1px solid var(--hairline);
+  background: #fff;
+  color: var(--ink);
+  cursor: pointer;
+  font-family: var(--sans);
+}
+.chat-suggestions button:hover { border-color: var(--accent); color: var(--accent); }
+@media (max-width: 480px) {
+  .chat-window { width: calc(100vw - 32px); right: 16px; bottom: 80px; }
+  .chat-fab { right: 16px; bottom: 16px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .chat-window, .chat-fab { transition: none; }
+  .chat-typing span { animation: none; opacity: 0.6; }
+}
+
   max-width: 470px;
   margin: 0 auto 28px;
   font-size: 0.85rem;
@@ -878,5 +1052,169 @@ a { color: inherit; }
   }
 })();
 </script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  var KNOWLEDGE = [
+    {
+      words: ['pris','koster','kostpris','hvor mye','beløp','sum'],
+      reply: 'Oral-B iO9 Duo Edition koster 2 999 kr hos Power i Black Weeks (til 30. november 2026). Førprisen var 5 399 kr, så rabatten er 2 400 kr. Etter 200 kr cashback er nettoprisen 2 799 kr. Deler du med én annen blir det omtrent 1 400 kr per person. Til sammenligning koster iO5 Duo 1 399 kr og iO3 Duo 999 kr.'
+    },
+    {
+      words: ['eske','esken','pakke','pakken','får med','innhold','i boksen','følger med','hva inneholder'],
+      reply: 'Esken inneholder to håndtak, flere børstehoder (vi har ikke verifisert eksakt antall fra butikken), et reiseetui, én lader, en holder og en USB-adapter. OBS: du får bare én lader, til tross for at det er to håndtak.'
+    },
+    {
+      words: ['cashback','cash back','tilbake','peng tilbake','få tilbake','oral-b-cashback'],
+      reply: 'Du kan få 200 kr cashback ved å registrere kjøpet på oral-b-cashback.com. Kjøpet må være gjort mellom 1. juli 2026 og 31. august 2027. Registreringen må skje innen 29. oktober 2027. Du trenger kvittering og strekkode.'
+    },
+    {
+      words: ['anbefal','bør jeg','bør vi','kjøpe','kjøp','verdt','dom','verdict'],
+      reply: 'Dommen er 9/10 hvis dere er to personer, fordi da blir prisen per person lav (ca. 1 400 kr). Er du alene får du 6/10, fordi du betaler for en børste du ikke bruker. Testen anbefaler iO9 Duo for to, men iO3 Duo (999 kr) eller iO5 Duo (1 399 kr) hvis du er én.'
+    },
+    {
+      words: ['alene','én','en person','én person','selv','bare meg'],
+      reply: 'Hvis du er én person koster iO9 Duo deg 2 799 kr etter cashback, og den andre børsten blir liggende ubrukt. Da gir testen 6/10. Du sparer penger på iO3 Duo (999 kr) eller iO5 Duo (1 399 kr) i stedet.'
+    },
+    {
+      words: ['to','dere er to','delt','dele','to personer','sammen'],
+      reply: 'Hvis dere er to blir nettoprisen ca. 1 400 kr per person etter cashback. Da gir testen 9/10, fordi prisen per person er lav. Det eneste trekket er at det bare følger med én lader.'
+    },
+    {
+      words: ['io3','i o 3','iO3'],
+      reply: 'iO3 Duo koster 999 kr hos Clas Ohlson. Det er den rimeligste modellen i sammenligningen. Testen anbefaler iO3 Duo hvis du er én person og bare trenger det grunnleggende.'
+    },
+    {
+      words: ['io5','i o 5','iO5'],
+      reply: 'iO5 Duo koster 1 399 kr hos Power. Den ligger mellom iO3 og iO9 i pris og funksjonalitet. Testen nevner den som et godt alternativ hvis du vil ha trykksensor uten å betale for iO9.'
+    },
+    {
+      words: ['io9','i o 9','iO9','toppmodell','flaggskip'],
+      reply: 'iO9 Duo er toppmodellen og koster 2 799 kr etter cashback. Den har trykksensor som finnes på alle tre modeller (iO3, iO5, iO9). Testens dom er 9/10 for to personer, 6/10 for én.'
+    },
+    {
+      words: ['cochrane','forskning','studie','plakk','vitenskapelig','11','21'],
+      reply: 'Cochrane Oral Health Group fant i 2014 at elektriske tannbørster fjerner 11 % mindre plakk etter 1-3 måneder, og 21 % mindre etter 3 måneder, sammenlignet med manuelle børster. Merk at studien ikke sammenligner iO3 med iO9 spesifikt, men elektrisk med manuelt generelt.'
+    },
+    {
+      words: ['tannkjøtt','trykk','presse','2 min','to min','myk børste','sls','tannkrem'],
+      reply: 'Testen anbefaler: børst i to minutter, ikke press for hardt, bruk myk børste, og velg tannkrem uten SLS (natriumlaurylsulfat) hvis du har sensitivt tannkjøtt. Disse rådene gjelder uavhengig av om du velger iO3, iO5 eller iO9.'
+    },
+    {
+      words: ['black weeks','tilbud','salg','rabatt','kampanje'],
+      reply: 'Black Weeks-prisen hos Power er 2 999 kr (førpris 5 399 kr). Tilbudet gjelder til 30. november 2026. Etter det stiger prisen trolig tilbake mot førprisnivået.'
+    },
+    {
+      words: ['sammenlign','vs','mot','ulik','forskjell','bedre enn'],
+      reply: 'Prisstigen er: iO3 Duo 999 kr (Clas Ohlson), iO5 Duo 1 399 kr (Power), iO9 Duo 2 799 kr etter cashback (Power). Alle tre har trykksensor. Forskjellene ligger i byggekvalitet, batterilevetid og ekstrafunksjoner. For én person er iO3 eller iO5 tilstrekkelig. For to som deler er iO9 Duo verdt vurderingen hvis dere vil ha toppmodellen.'
+    },
+    {
+      words: ['promo','reklame','annonse','reklamemateriell','produktinfo','oral-b sier','oral-b','produsent'],
+      reply: 'Jeg svarer kun basert på denne uavhengige testens fakta og priser. Jeg bruker ikke promomateriale fra Oral-B. Spør heller om pris, eskeinnhold, cashback, dommen eller forskningen.'
+    },
+    {
+      words: ['hei','hallo','halla','hi','hoy','høy','morn','god dag'],
+      reply: 'Hei! Spør meg om pris, esken, cashback, om du bør kjøpe alene, eller om forskningen. Alt basert på testens fakta.'
+    }
+  ];
+
+  var FALLBACKS = [
+    'Det spørsmålet dekkes ikke av testens fakta. Prøv å spørre om pris, esken, cashback, dommen eller sammenligningen med iO3/iO5.',
+    'Det vet jeg ikke basert på artikkelen. Jeg kan svare på priser, cashback, eskeinnhold, dommen og forskningen.',
+    'Beklager, det er utenfor det testen dekker. Spør om noe annet!'
+  ];
+
+  function answer(q) {
+    q = q.toLowerCase();
+    var scored = [];
+    for (var i = 0; i < KNOWLEDGE.length; i++) {
+      var k = KNOWLEDGE[i];
+      var score = 0;
+      for (var j = 0; j < k.words.length; j++) {
+        if (q.indexOf(k.words[j].toLowerCase()) !== -1) score++;
+      }
+      if (score > 0) scored.push({ score: score, reply: k.reply });
+    }
+    scored.sort(function (a, b) { return b.score - a.score; });
+    if (scored.length && scored[0].score >= 1) return scored[0].reply;
+    var idx = Math.floor(Math.random() * FALLBACKS.length);
+    return FALLBACKS[idx];
+  }
+
+  var fab = document.getElementById('chatFab');
+  var win = document.getElementById('chatWindow');
+  var closeBtn = document.getElementById('chatClose');
+  var msgs = document.getElementById('chatMessages');
+  var input = document.getElementById('chatInput');
+  var sendBtn = document.getElementById('chatSend');
+  var typing = document.getElementById('chatTyping');
+  var suggestions = document.getElementById('chatSuggestions');
+
+  function toggleOpen() {
+    var open = win.classList.toggle('open');
+    win.setAttribute('aria-hidden', !open);
+    if (open) { setTimeout(function () { input.focus(); }, 200); }
+  }
+
+  function addMsg(text, cls) {
+    var d = document.createElement('div');
+    d.className = 'chat-msg ' + cls;
+    d.textContent = text;
+    msgs.appendChild(d);
+    msgs.scrollTop = msgs.scrollHeight;
+  }
+
+  function handleSend() {
+    var text = input.value.trim();
+    if (!text) return;
+    addMsg(text, 'user');
+    input.value = '';
+    typing.classList.add('active');
+    setTimeout(function () {
+      typing.classList.remove('active');
+      addMsg(answer(text), 'bot');
+    }, 700 + Math.random() * 500);
+  }
+
+  fab.addEventListener('click', toggleOpen);
+  closeBtn.addEventListener('click', toggleOpen);
+  sendBtn.addEventListener('click', handleSend);
+  input.addEventListener('keydown', function (e) { if (e.key === 'Enter') handleSend(); });
+
+  suggestions.addEventListener('click', function (e) {
+    if (e.target.tagName === 'BUTTON') {
+      var q = e.target.getAttribute('data-q');
+      if (q) { input.value = q; handleSend(); }
+    }
+  });
+});
+</script>
+
+<button class="chat-fab" id="chatFab" aria-label="Åpne chat" title="Spør meg om iO9">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+</button>
+
+<div class="chat-window" id="chatWindow" role="dialog" aria-label="Chat om Oral-B iO9" aria-hidden="true">
+  <div class="chat-header">
+    <h4>iO9-guide</h4>
+    <button class="chat-close" id="chatClose" aria-label="Lukk chat"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+  </div>
+  <div class="chat-messages" id="chatMessages">
+    <div class="chat-msg bot">Hei! Jeg kan svare på spørsmål om denne testen, prisene, cashback og hva du får i esken. Alt er basert på fakta fra artikkelen, ikke reklame fra Oral-B.</div>
+  </div>
+  <div class="chat-typing" id="chatTyping"><span></span><span></span><span></span></div>
+  <div class="chat-suggestions" id="chatSuggestions">
+    <button data-q="Hva koster den?">Hva koster den?</button>
+    <button data-q="Hva er i esken?">Hva er i esken?</button>
+    <button data-q="Bør jeg kjøpe den alene?">Bør jeg kjøpe alene?</button>
+    <button data-q="Cashback, hvordan?">Cashback?</button>
+  </div>
+  <div class="chat-input-area">
+    <input type="text" id="chatInput" placeholder="Skriv et spørsmål..." autocomplete="off" aria-label="Skriv et spørsmål">
+    <button id="chatSend" aria-label="Send"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></button>
+  </div>
+  <p class="chat-disclaimer">Svarene er basert på fakta fra denne artikkelen, ikke promomateriale fra Oral-B.</p>
+</div>
+
 </body>
 </html>
