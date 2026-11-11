@@ -718,7 +718,7 @@ a { color: inherit; }
               <li>Du vil ha den mest avanserte sensoren</li>
             </ul>
           </div>
-          <div class="v-list" id="verdict-one" hidden>
+          <div class="v-list" id="verdict-one">
             <h3>Kjøp iO3 Duo hvis</h3>
             <ul>
               <li>Du er bare én</li>
@@ -800,6 +800,8 @@ a { color: inherit; }
 
   btnTwo.addEventListener('click', function () { setPerson(TWO); });
   btnOne.addEventListener('click', function () { setPerson(ONE); });
+
+  setPerson(TWO); // default state
 
   if (!window.gsap || !window.ScrollTrigger) return;
   gsap.registerPlugin(ScrollTrigger);
